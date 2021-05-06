@@ -1,0 +1,75 @@
+GET http://localhost:3001/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjAzMTEzODIsImV4cCI6MTYyMDMxMTQwMn0.D-O0nJv1ussBE0byyJkQKbvj_OA9v8j8Py993yJWcV4
+###
+GET http://localhost:3001/api/user/userInfo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjAzMTIxMTgsImV4cCI6MTYyMDMxMjEzOH0.AFvQhgR6vQYObTeyk_aIrKzr_N3UMKiy2ZjuQ1oB-yE
+
+###
+POST http://localhost:4001/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDkzZWRmMjg2YzU0NzVjN2M1YWY5ZDAiLCJpYXQiOjE2MjAzMTIwNTN9.Od2NjFhXh5k9JPs8avE-GGPkPUTIT5EtbWgLNimHNxs"
+}
+
+
+
+###
+DELETE http://localhost:4001/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxZGQwYmZmMDM5NzE5NDRkMzRlOTYiLCJpYXQiOjE2MjAzMTE2MTV9.2NqCxBPExYrOxo-aZrehLtGd3kcAnHd0EYfZ_s7vi88"
+}
+
+###
+POST http://localhost:4001/login
+Content-Type: application/json
+
+{
+    "email": "kekek@email.com",
+    "password": "1234567"
+}
+
+
+
+###
+POST http://localhost:4001/register
+Content-Type: application/json
+
+{
+    "name": "username",
+    "email": "u1@user.com",
+    "password": "1234567"
+}
+
+###
+POST http://localhost:4001/login
+Content-Type: application/json
+
+{
+    "email": "u1@user.com",
+    "password": "1234567"
+}
+
+###
+###########################################################################################
+###
+POST http://localhost:4001/register
+Content-Type: application/json
+
+{
+    "name": "username",
+    "email": "u123@email.com",
+    "password": "1234567"
+}
+
+
+###
+POST http://localhost:3001/api/user/login
+Content-Type: application/json
+
+{
+    "email": "kekek@email.com",
+    "password": "1234567"
+}
