@@ -21,14 +21,17 @@ mongoose.connect(
 const User = require('./model/User');
 const { registerValidation, loginValidation } = require('./validaton')
 
-// temp check
-let refreshTokens = []
+const Token = require('./model/Token');
 
-
-app.post('/token', (req, res) => {
+app.post('/token', async (req, res) => {
     const refreshToken = req.body.token
     if (refreshToken == null) return res.sendStatus(401)
-    if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403)
+    
+    const db_token = await Token.findOne({ refreshToken: req.body.token })
+    if(!db_token) {
+        return res.status(400).send('Token not found');
+    }
+        
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
         if (err) return res.sendStatus(403)
         const accessToken = generateAccessToken({ name: user.name })
@@ -90,15 +93,29 @@ app.post('/login', async (req, res) => {
     const acessToken = generateAccessToken(user);
     const refreshToken = jwt.sign({ _id: user._id }, process.env.REFRESH_TOKEN_SECRET)
 
-    refreshTokens.push(refreshToken)
-    console.log(refreshTokens)
+    const token = new Token({
+        refreshToken: refreshToken,
+        email: req.body.email
+    })
+    try {
+        const savedToken = await token.save();
+    } catch(err) {
+        res.status(400).send(err);
+    }
+
     res.json({ acessToken: acessToken, refreshToken: refreshToken })
 
 })
 
-app.delete('/logout', (req, res) => {
-    refreshTokens = refreshTokens.filter(token => token !== req.body.token)
-    res.status(204)
+app.delete('/logout', async (req, res) => {
+    
+    try {
+        const db_token = await Token.findOneAndDelete({ refreshToken: req.body.token })
+    } catch(err) {
+        res.status(400).send(err)
+    }    
+    
+    res.status(204).send("OK")
 })
 
 

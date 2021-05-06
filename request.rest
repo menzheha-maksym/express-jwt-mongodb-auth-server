@@ -9,7 +9,7 @@ POST http://localhost:4001/token
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDkzZWRmMjg2YzU0NzVjN2M1YWY5ZDAiLCJpYXQiOjE2MjAzMTIwNTN9.Od2NjFhXh5k9JPs8avE-GGPkPUTIT5EtbWgLNimHNxs"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDkzZWRmMjg2YzU0NzVjN2M1YWY5ZDAiLCJpYXQiOjE2MjAzMTM3Njl9.5DMnbQtETu5zCKSS34TMfP5gklhLc_-PviP_mZGkMCo"
 }
 
 
@@ -19,7 +19,7 @@ DELETE http://localhost:4001/logout
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxZGQwYmZmMDM5NzE5NDRkMzRlOTYiLCJpYXQiOjE2MjAzMTE2MTV9.2NqCxBPExYrOxo-aZrehLtGd3kcAnHd0EYfZ_s7vi88"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxZGQwYmZmMDM5NzE5NDRkMzRlOTYiLCJpYXQiOjE2MjAzMTYxMTR9.5Y69I_W8lKDhFWcErnjE2gcMNPQjKmDt27N2m6WQ-RI"
 }
 
 ###
