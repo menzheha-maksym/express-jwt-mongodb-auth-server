@@ -1,5 +1,5 @@
-const router = require('express').Router()
-const verify = require('./verifyToken')
+const router = require('express').Router();
+const verify = require('../token/verifyToken');
 
 router.get('/', verify, (req, res) => {
 

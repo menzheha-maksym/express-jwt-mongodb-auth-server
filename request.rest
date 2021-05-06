@@ -2,24 +2,24 @@ GET http://localhost:3001/api/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjAzMTk3MjYsImV4cCI6MTYyMDMyMDAyNn0.1VXeNfAnpWJKSJhL4xcmCC5Jop9LZ5FMwoJMQNn6-BQ
 ###
 GET http://localhost:3001/api/user/userInfo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODFkZDBiZmYwMzk3MTk0NGQzNGU5NiIsImlhdCI6MTYyMDMyMTMzMiwiZXhwIjoxNjIwMzIxNjMyfQ.tXf27OUQF7HoAXuyeF4OHBX5Alq_T1itUZkR4bnBTrk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMDMyNzU0MywiZXhwIjoxNjIwMzI3ODQzfQ.uEGaqKXaCkZnJdzxCUyjrZ4FMepW-wqXROU4xMpYiiQ
 
 ###
-POST http://localhost:4001/token
+POST http://localhost:4001/api/auth/token
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxZGQwYmZmMDM5NzE5NDRkMzRlOTYiLCJpYXQiOjE2MjAzMTQzMjN9.VBXqbLw8fV9JFkYXEhtmVkUxq5VGnK_FVltM8BBlKag"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMDMyNzU0M30.9bTJCVNrKC-FLNVxyWIDgadVjvvQho84xuDKxrVp74c"
 }
 
 
 
 ###
-DELETE http://localhost:4001/logout
+DELETE http://localhost:4001/api/auth/logout
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxZGQwYmZmMDM5NzE5NDRkMzRlOTYiLCJpYXQiOjE2MjAzMTYxMTR9.5Y69I_W8lKDhFWcErnjE2gcMNPQjKmDt27N2m6WQ-RI"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMDMyNzU0M30.9bTJCVNrKC-FLNVxyWIDgadVjvvQho84xuDKxrVp74c"
 }
 
 ###
@@ -34,17 +34,17 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:4001/register
+POST http://localhost:4001/api/auth/register
 Content-Type: application/json
 
 {
     "name": "username",
-    "email": "u1@user.com",
+    "email": "u2@user.com",
     "password": "1234567"
 }
 
 ###
-POST http://localhost:4001/login
+POST http://localhost:4001/api/auth/login
 Content-Type: application/json
 
 {

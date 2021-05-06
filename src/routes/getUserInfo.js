@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const verify = require('./verifyToken')
+const verify = require('../token/verifyToken');
 const User = require('../model/User');
 
 router.get('/userInfo', verify, async (req,res) => {
