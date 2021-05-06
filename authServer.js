@@ -34,7 +34,7 @@ app.post('/token', async (req, res) => {
         
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
         if (err) return res.sendStatus(403)
-        const accessToken = generateAccessToken({ name: user.name })
+        const accessToken = generateAccessToken(user);
         res.json({ accessToken: accessToken })
     })
 })
@@ -88,10 +88,11 @@ app.post('/login', async (req, res) => {
     if (!validPass) {
         return res.status(400).send('Invalid Password')
     }
-
+    const userId = { id: user._id };
+    
     //Create and assign a token
     const acessToken = generateAccessToken(user);
-    const refreshToken = jwt.sign({ _id: user._id }, process.env.REFRESH_TOKEN_SECRET)
+    const refreshToken = jwt.sign(userId, process.env.REFRESH_TOKEN_SECRET)
 
     const token = new Token({
         refreshToken: refreshToken,
@@ -120,7 +121,8 @@ app.delete('/logout', async (req, res) => {
 
 
 function generateAccessToken(user) {
-    return jwt.sign({ _id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '300s' })
+    const userId = { id: user._id };
+    return jwt.sign(userId, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '300s' })
 }
 
 
