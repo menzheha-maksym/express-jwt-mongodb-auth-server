@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 // import routes
 const postRoute = require('./routes/posts')
 const userInfoRoute = require('./routes/getUserInfo')
+const testRoute = require('./routes/test');
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use(express.json())
 // route middlewares
 app.use('/api/user', userInfoRoute);
 app.use('/api/posts',  postRoute);
+app.use('/api/user', testRoute);
 
 
 

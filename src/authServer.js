@@ -23,11 +23,14 @@ const logoutRoute = require('./auth_routes/logout');
 
 const tokenRoute = require('./token/token_route');
 
+const testRoute = require('./auth_routes/test');
 
 app.use('/api/auth', loginRoute);
 app.use('/api/auth', registerRoute);
 app.use('/api/auth', logoutRoute);
 
 app.use('/api/auth', tokenRoute);
+
+app.use('/api/auth', testRoute);
 
 app.listen(4001)
