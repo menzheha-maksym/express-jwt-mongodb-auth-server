@@ -1,15 +1,15 @@
 GET http://localhost:3001/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjAzMTEzODIsImV4cCI6MTYyMDMxMTQwMn0.D-O0nJv1ussBE0byyJkQKbvj_OA9v8j8Py993yJWcV4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjAzMTk3MjYsImV4cCI6MTYyMDMyMDAyNn0.1VXeNfAnpWJKSJhL4xcmCC5Jop9LZ5FMwoJMQNn6-BQ
 ###
 GET http://localhost:3001/api/user/userInfo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjAzMTIxMTgsImV4cCI6MTYyMDMxMjEzOH0.AFvQhgR6vQYObTeyk_aIrKzr_N3UMKiy2ZjuQ1oB-yE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODFkZDBiZmYwMzk3MTk0NGQzNGU5NiIsImlhdCI6MTYyMDMyMTMzMiwiZXhwIjoxNjIwMzIxNjMyfQ.tXf27OUQF7HoAXuyeF4OHBX5Alq_T1itUZkR4bnBTrk
 
 ###
 POST http://localhost:4001/token
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDkzZWRmMjg2YzU0NzVjN2M1YWY5ZDAiLCJpYXQiOjE2MjAzMTM3Njl9.5DMnbQtETu5zCKSS34TMfP5gklhLc_-PviP_mZGkMCo"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxZGQwYmZmMDM5NzE5NDRkMzRlOTYiLCJpYXQiOjE2MjAzMTQzMjN9.VBXqbLw8fV9JFkYXEhtmVkUxq5VGnK_FVltM8BBlKag"
 }
 
 
