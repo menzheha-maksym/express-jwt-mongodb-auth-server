@@ -31,7 +31,9 @@ app.use('/api/posts',  postRoute);
 app.use('/api/user', testRoute);
 
 
-
+app.use('/test', (req, res) => {
+    res.send("kek");
+})
 
 app.listen(3001, () => {
     console.log('Server up and running')

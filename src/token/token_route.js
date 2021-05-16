@@ -20,7 +20,7 @@ router.post('/token', async (req, res) => {
 
 
 function generateAccessToken(user) {
-    const userId = { id: user._id };
+    const userId = { id: user.id };
     return jwt.sign(userId, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '300s' })
 }
 

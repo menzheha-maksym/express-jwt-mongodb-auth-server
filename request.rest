@@ -1,15 +1,15 @@
 GET http://localhost:3001/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjAzMTk3MjYsImV4cCI6MTYyMDMyMDAyNn0.1VXeNfAnpWJKSJhL4xcmCC5Jop9LZ5FMwoJMQNn6-BQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMDQ3MDU5NywiZXhwIjoxNjIwNDcwODk3fQ.Scsu6YlsN4F4b5lYMbucFFpZoFsQGrqb49FkOaDR-rI
 ###
 GET http://localhost:3001/api/user/userInfo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMDMyNzU0MywiZXhwIjoxNjIwMzI3ODQzfQ.uEGaqKXaCkZnJdzxCUyjrZ4FMepW-wqXROU4xMpYiiQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMTE2MzAwNCwiZXhwIjoxNjIxMTYzMzA0fQ.DQAdjJygNzE_vs9pzinIxoXEwK2h68uSs8kXLXsLy3o
 
 ###
 POST http://localhost:4001/api/auth/token
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMDMyNzU0M30.9bTJCVNrKC-FLNVxyWIDgadVjvvQho84xuDKxrVp74c"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMTE2MjYxMX0.6JKSraTIyCgOqVh5cbgYju4h89wGxGDhIT7LnZeIsFo"
 }
 
 
@@ -19,7 +19,7 @@ DELETE http://localhost:4001/api/auth/logout
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMDMyNzU0M30.9bTJCVNrKC-FLNVxyWIDgadVjvvQho84xuDKxrVp74c"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyMTE2MjYxMX0.6JKSraTIyCgOqVh5cbgYju4h89wGxGDhIT7LnZeIsFo"
 }
 
 ###
@@ -73,3 +73,8 @@ Content-Type: application/json
     "email": "kekek@email.com",
     "password": "1234567"
 }
+
+###
+GET http://localhost:4002/test
+Content-Type: application/json
+

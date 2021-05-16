@@ -39,7 +39,13 @@ router.post('/login', async (req, res) => {
         res.status(400).send(err);
     }
 
-    res.json({ acessToken: acessToken, refreshToken: refreshToken })
+    res.json({ 
+        acessToken: acessToken, 
+        refreshToken: refreshToken,
+        userId: user._id,
+        email: user.email,
+        displayName: user.name 
+    })
 
 })
 
