@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
     const userId = { id: user._id };
     
     //Create and assign a token
-    const acessToken = generateAccessToken(user);
+    const accessToken = generateAccessToken(user);
     const refreshToken = jwt.sign(userId, process.env.REFRESH_TOKEN_SECRET)
 
     const token = new Token({
@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
     }
 
     res.json({ 
-        acessToken: acessToken, 
+        accessToken: accessToken, 
         refreshToken: refreshToken,
         userId: user._id,
         email: user.email,
