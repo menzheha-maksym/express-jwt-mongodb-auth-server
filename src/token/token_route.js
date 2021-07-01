@@ -8,7 +8,7 @@ router.post('/token', async (req, res) => {
     
     const db_token = await Token.findOne({ refreshToken: req.body.token })
     if(!db_token) {
-        return res.status(400).send('Token not found');
+        return res.status(400).send(JSON.stringify({'error': 'Token not found'}));
     }
         
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
