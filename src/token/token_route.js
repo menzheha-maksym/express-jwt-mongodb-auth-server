@@ -2,6 +2,8 @@ const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const Token = require('../model/Token');
 
+
+// TODO: add expiration date to refresh Token and mb delete it from DB
 router.post('/token', async (req, res) => {
     const refreshToken = req.body.token
     if (refreshToken == null) return res.sendStatus(401)

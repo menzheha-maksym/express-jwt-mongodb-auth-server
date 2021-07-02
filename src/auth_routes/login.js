@@ -14,14 +14,16 @@ router.post('/login', async (req, res) => {
         return res.status(400).send(error.details[0].message)
     }
 
+    console.log("user " + req.body.email + " tries to login");
+
     // check if the email exists
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-        return res.status(400).send('Email or password is wrong');
+        return res.status(400).send(JSON.stringify({'error': 'Email or password is wrong'}));
     }
     const validPass = await bcrypt.compare(req.body.password, user.password);
     if (!validPass) {
-        return res.status(400).send('Invalid Password')
+        return res.status(400).send(JSON.stringify({'error': 'Invalid Password'}))
     }
     const userId = { id: user._id };
     
