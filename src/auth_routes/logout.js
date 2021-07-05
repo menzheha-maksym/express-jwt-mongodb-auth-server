@@ -9,6 +9,7 @@ router.delete('/logout', async (req, res) => {
         console.log("user " + db_token.email + " logged out");
 
     } catch(err) {
+        console.log(err);
         res.status(400).send(err)
     }    
     

@@ -78,3 +78,56 @@ Content-Type: application/json
 GET http://localhost:4002/test
 Content-Type: application/json
 
+
+
+
+
+###
+DELETE http://localhost:4001/api/auth/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyNTE1NTA5M30.h-zzmkZRQYrRvHKAcYDDkkMAd8waL-kMW60O_7mr6WM"
+}
+
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyNTE1NTA5M30.h-zzmkZRQYrRvHKAcYDDkkMAd8waL-kMW60O_7mr6WM
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDkzZWRmMjg2YzU0NzVjN2M1YWY5ZDAiLCJpYXQiOjE2MjAzMTM3Njl9.5DMnbQtETu5zCKSS34TMfP5gklhLc_-PviP_mZGkMCo
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTNlZGYyODZjNTQ3NWM3YzVhZjlkMCIsImlhdCI6MTYyNTE1NTA5MywiZXhwIjoxNjI1MTU1MzkzfQ.VHFgkyY0Q4mXg2jyfBaafKwf-TvzzdX_6jPk408PuFQ
+
+
+#
+###
+POST http://localhost:4001/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "user8",
+    "email": "u9@user.com",
+    "password": "1234567"
+}
+
+###
+POST http://localhost:4001/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "u10@u.com",
+    "password": "1234567"
+}
+
+
+
+### 
+POST http://localhost:3001/api/user/update-profile/username HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTAyODNlZGNjOTk1MzExYzQyMzgwMyIsImlhdCI6MTYyNTMwNjk2OCwiZXhwIjoxNjI1MzA3MjY4fQ.XsNaX1I_FNHBJKvi_eHQzz9OU8ajlnGpY58mSrqXiB4
+
+{
+    "name": "user10",
+    "userId": "60e0283edcc995311c423803"
+}
+
+###
+<request>
+    <name>user10</name>
+</request>

@@ -8,6 +8,8 @@ const postRoute = require('./routes/posts')
 const userInfoRoute = require('./routes/getUserInfo')
 const testRoute = require('./routes/test');
 
+const updateProfileRoute = require('./routes/auth_required/updateProfile');
+
 dotenv.config();
 
 //Connect to DB
@@ -15,7 +17,8 @@ mongoose.connect(
     process.env.DB_CONNECT,
     { 
         useNewUrlParser: true,
-        useUnifiedTopology: true 
+        useUnifiedTopology: true,
+        useFindAndModify: false
     },
     () => { console.log('Connected to DB')
 })
@@ -29,6 +32,8 @@ app.use(express.json())
 app.use('/api/user', userInfoRoute);
 app.use('/api/posts',  postRoute);
 app.use('/api/user', testRoute);
+
+app.use('/api/user', updateProfileRoute);
 
 
 app.use('/test', (req, res) => {
