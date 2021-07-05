@@ -161,3 +161,23 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTJhYjQ5N
     "email": "u12@u.com",
     "userId": "60e2ab496f560e76780b4798"
 }
+
+
+###
+POST http://localhost:4001/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "u12@u.com",
+    "password": "password"
+}
+
+### 
+POST http://localhost:3001/api/user/update-profile/password HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTJhYjQ5NmY1NjBlNzY3ODBiNDc5OCIsImlhdCI6MTYyNTUwMTM1MywiZXhwIjoxNjI1NTAxNjUzfQ.mtbmmapIwYHhKxLl7nPpr40CekNhxzwdkboTsTgNQEg
+
+{
+    "password": "password",
+    "userId": "60e2ab496f560e76780b4798"
+}
