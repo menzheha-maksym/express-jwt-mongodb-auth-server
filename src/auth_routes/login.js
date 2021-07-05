@@ -46,7 +46,7 @@ router.post('/login', async (req, res) => {
         refreshToken: refreshToken,
         userId: user._id,
         email: user.email,
-        displayName: user.name 
+        displayName: user.username 
     })
 
 })

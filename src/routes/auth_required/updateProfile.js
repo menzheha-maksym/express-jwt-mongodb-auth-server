@@ -2,23 +2,23 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const User = require('../../model/User');
 const verify = require('../../token/verifyToken');
-const {nameValidation, emailValidation, passwordValidation} = require('../../validation/validaton'); 
+const {userNameValidation, emailValidation, passwordValidation} = require('../../validation/validaton'); 
 
 
 
 router.post('/update-profile/username', verify, async (req, res) => {
 
-    const { error } = nameValidation(req.body);
+    const { error } = userNameValidation(req.body);
     if(error) {
         return res.status(400).send(JSON.stringify({'error': error.details[0].message}));
     }
 
-    const usernameExist = await User.findOne({ name: req.body.name });
+    const usernameExist = await User.findOne({ username: req.body.username });
     if(usernameExist) {
         return res.status(400).send(JSON.stringify({'error': 'Username already exist'}));
     }
 
-    const user = await User.findOneAndUpdate({ _id: req.user.id }, {name: req.body.name});
+    const user = await User.findOneAndUpdate({ _id: req.user.id }, {username: req.body.username});
 
     res.status(200).send(JSON.stringify({'message': 'OK'}));
 })

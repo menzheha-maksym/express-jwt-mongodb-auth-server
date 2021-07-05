@@ -10,7 +10,7 @@ router.get('/userInfo', verify, async (req,res) => {
     }
 
     const userInfo = {
-        name: user.name,
+        username: user.username,
         email: user.email
     }
     

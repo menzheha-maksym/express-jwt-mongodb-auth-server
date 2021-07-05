@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
     }
 
     // check if username is already exists
-    const usernameExist = await User.findOne({ name: req.body.name });
+    const usernameExist = await User.findOne({ username: req.body.username });
     if(usernameExist) {
         return res.status(400).send(JSON.stringify({'error': 'Username already exist'}));
     }
@@ -31,7 +31,7 @@ router.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
     const user = new User({
-        name: req.body.name,
+        username: req.body.username,
         email: req.body.email,
         password: hashedPassword
     });
