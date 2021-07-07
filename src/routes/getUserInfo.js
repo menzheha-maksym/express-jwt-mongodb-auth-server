@@ -2,11 +2,11 @@ const router = require('express').Router()
 const verify = require('../token/verifyToken');
 const User = require('../model/User');
 
-router.get('/userInfo', verify, async (req,res) => {
+router.post('/userInfo', verify, async (req,res) => {
     
-    const user = await User.findOne({ _id:  req.user.id})
+    const user = await User.findOne({ username:  req.body.username});
     if(!user) {
-        return res.status(404).send("User not found");
+        return res.status(404).send(JSON.stringify({"error": "User not found"}));
     }
 
     const userInfo = {
