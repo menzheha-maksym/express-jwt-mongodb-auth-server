@@ -40,6 +40,6 @@ app.use('/test', (req, res) => {
     res.send("kek");
 })
 
-app.listen(3001, () => {
-    console.log('Server up and running')
+app.listen(4001, () => {
+    console.log('Server up and running on PORT 4001');
 })

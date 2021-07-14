@@ -33,4 +33,6 @@ app.use('/api/auth', tokenRoute);
 
 app.use('/api/auth', testRoute);
 
-app.listen(4001)
+app.listen(4002, () => {
+    console.log('Auth Server up and running on PORT 4002');
+});
