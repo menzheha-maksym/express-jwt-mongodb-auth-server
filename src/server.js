@@ -12,6 +12,15 @@ const updateProfileRoute = require('./routes/auth_required/updateProfile');
 
 dotenv.config();
 
+if (process.env.DB_CONNECT === undefined || 
+    process.env.TOKEN_SECRET === undefined ||
+    process.env.ACCESS_TOKEN_SECRET === undefined ||
+    process.env.REFRESH_TOKEN_SECRET === undefined) {
+    
+    console.log("Some env variables are not defined") 
+    process.exit(1);
+}
+
 //Connect to DB
 mongoose.connect(
     process.env.DB_CONNECT,

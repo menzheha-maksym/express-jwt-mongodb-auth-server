@@ -7,6 +7,14 @@ app.use(express.json())
 
 const mongoose = require('mongoose')
 //Connect to DB
+if (process.env.DB_CONNECT === undefined || 
+    process.env.TOKEN_SECRET === undefined ||
+    process.env.ACCESS_TOKEN_SECRET === undefined ||
+    process.env.REFRESH_TOKEN_SECRET === undefined) {
+    
+    console.log("Some env variables are not defined") 
+    process.exit(1);
+}
 mongoose.connect(
     process.env.DB_CONNECT,
     { 
